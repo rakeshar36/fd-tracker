@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1F4E79">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FD Tracker">
+<meta name="description" content="Track family fixed deposits across multiple banks">
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkZhbWlseSBGRCBUcmFja2VyIiwKICAic2hvcnRfbmFtZSI6ICJGRCBUcmFja2VyIiwKICAiZGVzY3JpcHRpb24iOiAiVHJhY2sgZmFtaWx5IGZpeGVkIGRlcG9zaXRzIGFjcm9zcyBtdWx0aXBsZSBiYW5rcyIsCiAgInN0YXJ0X3VybCI6ICIuLyIsCiAgInNjb3BlIjogIi4vIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjRjNGNUY4IiwKICAidGhlbWVfY29sb3IiOiAiIzFGNEU3OSIsCiAgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0LXByaW1hcnkiLAogICJpY29ucyI6IFsKICAgIHsgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBeU1EQWdNakF3SWo0S1BISmxZM1FnZDJsa2RHZzlJakl3TUNJZ2FHVnBaMmgwUFNJeU1EQWlJSEo0UFNJek5pSWdabWxzYkQwaUl6RkdORVUzT1NJdlBnbzhkR1Y0ZENCNFBTSXhNREFpSUhrOUlqRXlPQ0lnWm05dWRDMW1ZVzFwYkhrOUlrZGxiM0puYVdFc0lDZFVhVzFsY3lCT1pYY2dVbTl0WVc0bkxDQnpaWEpwWmlJZ1ptOXVkQzF6YVhwbFBTSTROaUlnWm05dWRDMTNaV2xuYUhROUlqY3dNQ0lnWm1sc2JEMGlJMFl6UmpWR09DSWdkR1Y0ZEMxaGJtTm9iM0k5SW0xcFpHUnNaU0krUmtROEwzUmxlSFErQ2p3dmMzWm5QZ289IiwgInNpemVzIjogIjIwMHgyMDAiLCAidHlwZSI6ICJpbWFnZS9zdmcreG1sIiwgInB1cnBvc2UiOiAiYW55IiB9LAogICAgeyAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0F5TURBZ01qQXdJajRLUEhKbFkzUWdkMmxrZEdnOUlqSXdNQ0lnYUdWcFoyaDBQU0l5TURBaUlISjRQU0l6TmlJZ1ptbHNiRDBpSXpGR05FVTNPU0l2UGdvOGRHVjRkQ0I0UFNJeE1EQWlJSGs5SWpFeU9DSWdabTl1ZEMxbVlXMXBiSGs5SWtkbGIzSm5hV0VzSUNkVWFXMWxjeUJPWlhjZ1VtOXRZVzRuTENCelpYSnBaaUlnWm05dWRDMXphWHBsUFNJNE5pSWdabTl1ZEMxM1pXbG5hSFE5SWpjd01DSWdabWxzYkQwaUkwWXpSalZHT0NJZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSStSa1E4TDNSbGVIUStDand2YzNablBnbz0iLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLCAicHVycG9zZSI6ICJtYXNrYWJsZSIgfQogIF0KfQo=">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHJ4PSIzNiIgZmlsbD0iIzFGNEU3OSIvPgo8dGV4dCB4PSIxMDAiIHk9IjEyOCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSI4NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRjVGOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RkQ8L3RleHQ+Cjwvc3ZnPgo=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KPHJlY3Qgd2lkdGg9IjIwMCIgaGVpZ2h0PSIyMDAiIHJ4PSIzNiIgZmlsbD0iIzFGNEU3OSIvPgo8dGV4dCB4PSIxMDAiIHk9IjEyOCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsICdUaW1lcyBOZXcgUm9tYW4nLCBzZXJpZiIgZm9udC1zaXplPSI4NiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YzRjVGOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RkQ8L3RleHQ+Cjwvc3ZnPgo=">
+<title>Family FD Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16233A;
+    --ledger-green:#1F4E79;
+    --ledger-green-light:#2E6DA4;
+    --parchment:#F3F5F8;
+    --parchment-dark:#E4E9EF;
+    --gold:#9C7A2E;
+    --gold-light:#B9955A;
+    --alert-red:#A13D48;
+    --alert-bg:#F6E9EA;
+    --line:#D7DDE5;
+    --ink-faint:#5B6B80;
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overscroll-behavior-y:contain;
+  }
+  .app{
+    max-width:1040px;margin:0 auto;
+    padding:calc(env(safe-area-inset-top,0px) + 20px) max(16px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 60px) max(16px, env(safe-area-inset-left,0px));
+  }
+
+  /* ===== Header ===== */
+  header.top{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    padding-bottom:20px;margin-bottom:26px;border-bottom:2px solid var(--ink);
+    gap:16px;flex-wrap:wrap;
+  }
+  .brand-mark{display:flex;align-items:center;gap:14px;}
+  .brand-mark .glyph{
+    width:44px;height:44px;border-radius:50%;
+    background:var(--ledger-green);color:var(--parchment);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:20px;
+    flex-shrink:0;
+  }
+  h1{
+    font-family:'Fraunces', serif;font-weight:700;font-size:28px;margin:0;
+    letter-spacing:-0.01em;
+  }
+  .subtitle{font-size:12.5px;color:var(--ink-faint);letter-spacing:.04em;text-transform:uppercase;margin-top:2px;}
+  .today-stamp{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);
+    text-align:right;
+  }
+
+  /* ===== Tabs ===== */
+  nav.tabs{
+    display:flex;gap:4px;margin-bottom:28px;border-bottom:1px solid var(--line);
+    overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  nav.tabs::-webkit-scrollbar{display:none;}
+  nav.tabs button{
+    font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;
+    background:none;border:none;padding:12px 16px;cursor:pointer;color:var(--ink-faint);
+    border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .15s;
+    white-space:nowrap;flex-shrink:0;min-height:44px;
+  }
+  nav.tabs button.active{color:var(--ink);border-bottom-color:var(--ledger-green);font-weight:600;}
+  nav.tabs button:hover{color:var(--ink);}
+
+  .view{display:none;}
+  .view.active{display:block;animation:fade .25s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ===== Alert banner ===== */
+  .alert-banner{
+    background:var(--alert-bg);border:1px solid var(--alert-red);
+    border-left:4px solid var(--alert-red);border-radius:4px;
+    padding:14px 18px;margin-bottom:24px;
+  }
+  .alert-banner.neutral{
+    background:var(--white);border-color:var(--ledger-green-light);border-left-color:var(--ledger-green-light);
+  }
+  .alert-banner.neutral .alert-head{color:var(--ledger-green);}
+  .alert-banner .alert-head{
+    display:flex;align-items:center;gap:8px;font-weight:600;color:var(--alert-red);
+    font-size:13.5px;text-transform:uppercase;letter-spacing:.03em;margin-bottom:8px;
+  }
+  .alert-list{display:flex;flex-direction:column;gap:6px;}
+  .alert-row{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:14px;padding:6px 0;border-bottom:1px dashed rgba(158,59,59,.25);
+  }
+  .alert-row:last-child{border-bottom:none;}
+  .alert-row .who{font-weight:600;}
+  .alert-row .days{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--alert-red);font-weight:600;}
+
+  /* ===== Dashboard stat cards ===== */
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:28px;}
+  .stat-card{
+    background:var(--white);border:1px solid var(--line);border-radius:6px;
+    padding:16px 18px;position:relative;overflow:hidden;
+  }
+  .stat-card::before{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ledger-green);
+  }
+  .stat-card.gold::before{background:var(--gold);}
+  .stat-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-faint);margin-bottom:6px;}
+  .stat-value{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--ink);}
+  .stat-value.small{font-size:20px;}
+
+  h2.section-title{
+    font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin:0 0 14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  h2.section-title .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-faint);
+    text-transform:uppercase;letter-spacing:.06em;font-weight:400;
+  }
+
+  /* ===== breakdown lists ===== */
+  .breakdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:30px;}
+  @media(max-width:640px){.breakdown-grid{grid-template-columns:1fr;}}
+  .breakdown-list{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:6px 0;}
+  .breakdown-row{
+    display:flex;justify-content:space-between;padding:10px 18px;
+    border-bottom:1px solid var(--parchment-dark);font-size:14px;
+  }
+  .breakdown-row:last-child{border-bottom:none;}
+  .breakdown-row .amt{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+
+  /* ===== Ledger / FD cards ===== */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;flex:1;min-width:0;}
+  .filters select{flex:1;min-width:120px;}
+  select, input, button.btn{
+    font-family:'IBM Plex Sans',sans-serif;font-size:16px;
+  }
+  select, input{
+    padding:10px 12px;border:1px solid var(--line);border-radius:5px;background:var(--white);color:var(--ink);
+    min-height:44px;
+  }
+  select:focus, input:focus{outline:2px solid var(--ledger-green-light);outline-offset:1px;}
+
+  button.btn{
+    padding:10px 16px;border-radius:5px;border:1px solid var(--ledger-green);
+    background:var(--ledger-green);color:var(--parchment);font-weight:500;cursor:pointer;
+    transition:background .15s;min-height:44px;
+  }
+  button.btn:hover{background:var(--ledger-green-light);}
+  button.btn.secondary{
+    background:transparent;color:var(--ledger-green);border:1px solid var(--ledger-green);
+  }
+  button.btn.secondary:hover{background:rgba(27,67,50,.06);}
+  button.btn.danger{background:transparent;border:1px solid var(--alert-red);color:var(--alert-red);}
+  button.btn.danger:hover{background:var(--alert-bg);}
+
+  .empty-state{
+    text-align:center;padding:50px 20px;color:var(--ink-faint);
+    background:var(--white);border:1px dashed var(--line);border-radius:8px;
+  }
+  .empty-state .glyph{font-size:28px;margin-bottom:10px;}
+  .empty-state p{margin:4px 0;font-size:14px;}
+
+  .fd-list{display:flex;flex-direction:column;gap:12px;}
+  .fd-card{
+    position:relative;background:var(--white);border:1px solid var(--line);border-radius:7px;
+    padding:16px 20px 16px 28px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;
+  }
+  .fd-card::before{
+    content:'';position:absolute;left:0;top:10px;bottom:10px;width:4px;border-radius:3px;
+    background:var(--ledger-green-light);
+  }
+  .fd-card.maturing::before{background:var(--gold);}
+  .fd-card.matured::before{background:var(--ink-faint);}
+  .fd-main{display:flex;flex-direction:column;gap:6px;}
+  .fd-top-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .fd-bank{font-family:'Fraunces',serif;font-weight:600;font-size:16.5px;}
+  .fd-person-tag{
+    font-size:11px;padding:2px 9px;border-radius:20px;background:var(--parchment-dark);
+    color:var(--ink);font-weight:500;letter-spacing:.02em;
+  }
+  .fd-id{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-faint);}
+  .fd-detail-row{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink);margin-top:2px;}
+  .fd-detail-row .d-label{color:var(--ink-faint);margin-right:4px;}
+  .fd-detail-row .d-val{font-family:'IBM Plex Mono',monospace;font-weight:500;}
+  .stamp{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.03em;
+    padding:5px 10px;border-radius:4px;border:1.5px solid; text-transform:uppercase;white-space:nowrap;
+  }
+  .stamp.active{color:var(--ledger-green);border-color:var(--ledger-green);}
+  .stamp.maturing{color:var(--gold);border-color:var(--gold);}
+  .stamp.matured{color:var(--ink-faint);border-color:var(--ink-faint);}
+  .fd-actions{display:flex;gap:8px;align-items:center;}
+  .icon-btn{
+    background:none;border:none;cursor:pointer;color:var(--ink-faint);font-size:17px;padding:8px 10px;
+    border-radius:4px;transition:color .15s,background .15s;min-width:40px;min-height:40px;
+  }
+  .icon-btn:hover{color:var(--ink);background:var(--parchment-dark);}
+  .icon-btn.del:hover{color:var(--alert-red);}
+
+  /* ===== Simple entity lists (banks/people) ===== */
+  .entity-list{display:flex;flex-direction:column;gap:8px;max-width:480px;}
+  .entity-row{
+    display:flex;justify-content:space-between;align-items:center;
+    background:var(--white);border:1px solid var(--line);border-radius:6px;padding:11px 16px;
+  }
+  .entity-row .name{font-weight:500;font-size:14.5px;}
+  .entity-row .count{font-size:12px;color:var(--ink-faint);margin-left:8px;}
+  .add-row{display:flex;gap:8px;max-width:480px;margin-bottom:18px;}
+  .add-row input{flex:1;}
+
+  /* ===== Modal ===== */
+  .modal-overlay{
+    display:none;position:fixed;inset:0;background:rgba(28,37,65,.45);
+    align-items:flex-start;justify-content:center;padding:40px 16px;overflow-y:auto;z-index:50;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--parchment);border:1px solid var(--line);border-radius:8px;
+    padding:26px 28px 24px;width:100%;max-width:460px;box-shadow:0 20px 50px rgba(28,37,65,.25);
+  }
+  .modal h3{font-family:'Fraunces',serif;font-size:20px;margin:0 0 18px;font-weight:600;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-faint);margin-bottom:5px;}
+  .field input, .field select{width:100%;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px;}
+  .form-error{color:var(--alert-red);font-size:12.5px;margin-top:-6px;margin-bottom:12px;display:none;}
+
+  footer.note{margin-top:40px;text-align:center;font-size:11.5px;color:var(--ink-faint);}
+  .fab-row{display:flex;justify-content:flex-end;margin-bottom:16px;}
+
+  /* ===== header lock button ===== */
+  .header-right{display:flex;align-items:center;gap:10px;}
+  .lock-toggle-btn{font-size:19px;min-width:40px;min-height:40px;}
+
+  /* ===== Security tab ===== */
+  .security-card{
+    background:var(--white);border:1px solid var(--line);border-radius:7px;
+    padding:20px 22px;max-width:480px;
+  }
+  .sec-desc{font-size:14px;color:var(--ink-faint);margin:0 0 16px;line-height:1.5;}
+  .sec-status{
+    display:flex;align-items:center;gap:8px;font-size:14px;margin-bottom:18px;
+  }
+  .sec-dot{width:8px;height:8px;border-radius:50%;background:var(--ledger-green-light);display:inline-block;}
+  .sec-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:8px 0;}
+  .sec-row-title{font-size:14.5px;font-weight:500;}
+  .sec-row-sub{font-size:12.5px;color:var(--ink-faint);margin-top:2px;}
+  .sec-details{margin-top:14px;border-top:1px solid var(--parchment-dark);padding-top:12px;}
+  .sec-details summary{cursor:pointer;font-size:14px;font-weight:500;color:var(--ledger-green);padding:4px 0;}
+
+  .toggle{position:relative;display:inline-block;width:46px;height:26px;flex-shrink:0;}
+  .toggle input{opacity:0;width:0;height:0;}
+  .toggle-track{
+    position:absolute;inset:0;background:var(--line);border-radius:20px;transition:background .15s;cursor:pointer;
+  }
+  .toggle-thumb{
+    position:absolute;top:3px;left:3px;width:20px;height:20px;background:var(--white);border-radius:50%;
+    transition:transform .15s;box-shadow:0 1px 3px rgba(0,0,0,.2);
+  }
+  .toggle input:checked + .toggle-track{background:var(--ledger-green);}
+  .toggle input:checked + .toggle-track .toggle-thumb{transform:translateX(20px);}
+
+  /* ===== Lock overlay ===== */
+  .lock-overlay{
+    display:none;position:fixed;inset:0;background:var(--parchment);z-index:200;
+    align-items:center;justify-content:center;padding:24px;
+  }
+  .lock-overlay.open{display:flex;}
+  .lock-box{width:100%;max-width:320px;text-align:center;}
+  .lock-glyph{font-size:36px;margin-bottom:8px;}
+  .lock-box h2{font-family:'Fraunces',serif;font-size:21px;margin:0 0 4px;font-weight:600;}
+  .lock-sub{font-size:13.5px;color:var(--ink-faint);margin:0 0 22px;}
+  .pin-dots{display:flex;justify-content:center;gap:12px;margin-bottom:10px;}
+  .pin-dots span{
+    width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ledger-green);background:transparent;
+    transition:background .1s;
+  }
+  .pin-dots span.filled{background:var(--ledger-green);}
+  .pin-dots.shake{animation:shake .35s;}
+  @keyframes shake{
+    10%,90%{transform:translateX(-2px);} 20%,80%{transform:translateX(4px);}
+    30%,50%,70%{transform:translateX(-8px);} 40%,60%{transform:translateX(8px);}
+  }
+  .lock-error{color:var(--alert-red);font-size:12.5px;min-height:18px;margin-bottom:14px;}
+  .pin-pad{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:260px;margin:0 auto 22px;
+  }
+  .pin-pad button{
+    font-family:'IBM Plex Sans',sans-serif;font-size:20px;font-weight:500;
+    background:var(--white);border:1px solid var(--line);border-radius:50%;
+    width:64px;height:64px;cursor:pointer;color:var(--ink);
+  }
+  .pin-pad button:active{background:var(--parchment-dark);}
+  .pin-pad .pin-back{font-size:18px;border:none;background:none;color:var(--ink-faint);}
+  .pin-pad span{width:64px;height:64px;}
+
+  @media(max-width:600px){
+    .fd-card{grid-template-columns:1fr;}
+    .fd-actions{justify-content:flex-start;}
+    .toolbar{flex-direction:column;align-items:stretch;}
+    .toolbar .filters{width:100%;}
+    .toolbar .filters button.btn{flex:1;}
+    header.top{align-items:flex-start;}
+    .today-stamp{text-align:left;}
+    .add-row{flex-direction:column;max-width:none;}
+    .add-row button.btn{width:100%;}
+    .breakdown-grid{gap:14px;}
+    .modal-overlay{padding:0;align-items:stretch;}
+    .modal{max-width:none;width:100%;min-height:100%;border-radius:0;padding:20px 18px calc(env(safe-area-inset-bottom,0px) + 20px);}
+    .field-row{grid-template-columns:1fr;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .security-card{max-width:none;padding:18px 16px;}
+  }
+  @media(max-width:380px){
+    .stat-grid{grid-template-columns:1fr;}
+    .pin-pad{gap:8px;}
+    .pin-pad button, .pin-pad span{width:56px;height:56px;}
+  }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div class="brand-mark">
+      <div class="glyph">FD</div>
+      <div>
+        <h1>Family FD Tracker</h1>
+        <div class="subtitle">Fixed Deposit Register</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="icon-btn lock-toggle-btn" id="lockNowBtn" title="Lock app" style="display:none;">🔒</button>
+      <div class="today-stamp" id="todayStamp"></div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-view="dashboard">Dashboard</button>
+    <button class="tab-btn" data-view="fds">Fixed Deposits</button>
+    <button class="tab-btn" data-view="banks">Banks</button>
+    <button class="tab-btn" data-view="people">Family Members</button>
+    <button class="tab-btn" data-view="security">Security</button>
+  </nav>
+
+  <!-- DASHBOARD -->
+  <section class="view active" id="view-dashboard">
+    <div id="alertBanner"></div>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="breakdown-grid">
+      <div>
+        <h2 class="section-title">By Person</h2>
+        <div class="breakdown-list" id="byPerson"></div>
+      </div>
+      <div>
+        <h2 class="section-title">By Bank</h2>
+        <div class="breakdown-list" id="byBank"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FDS -->
+  <section class="view" id="view-fds">
+    <div class="toolbar">
+      <div class="filters">
+        <select id="filterPerson"><option value="">All Persons</option></select>
+        <select id="filterBank"><option value="">All Banks</option></select>
+        <select id="sortFd">
+          <option value="maturity-asc">Maturity: Soonest</option>
+          <option value="maturity-desc">Maturity: Latest</option>
+          <option value="principal-desc">Principal: High to Low</option>
+          <option value="principal-asc">Principal: Low to High</option>
+        </select>
+      </div>
+      <div class="filters">
+        <button class="btn secondary" id="exportCsvBtn">⬇ Export CSV</button>
+        <button class="btn secondary" id="importCsvBtn">⬆ Import CSV</button>
+        <input type="file" id="importCsvInput" accept=".csv,text/csv" style="display:none;">
+        <button class="btn" id="addFdBtn">+ Add Fixed Deposit</button>
+      </div>
+    </div>
+    <div id="importSummary"></div>
+    <div class="fd-list" id="fdList"></div>
+  </section>
+
+  <!-- BANKS -->
+  <section class="view" id="view-banks">
+    <h2 class="section-title">Banks</h2>
+    <div class="add-row">
+      <input type="text" id="newBankName" placeholder="e.g. State Bank of India">
+      <button class="btn" id="addBankBtn">Add Bank</button>
+    </div>
+    <div class="entity-list" id="bankList"></div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section class="view" id="view-people">
+    <h2 class="section-title">Family Members</h2>
+    <div class="add-row">
+      <input type="text" id="newPersonName" placeholder="e.g. Amma">
+      <button class="btn" id="addPersonBtn">Add Member</button>
+    </div>
+    <div class="entity-list" id="personList"></div>
+  </section>
+
+  <!-- SECURITY -->
+  <section class="view" id="view-security">
+    <h2 class="section-title">Security</h2>
+
+    <div class="security-card" id="noPinSetup">
+      <p class="sec-desc">Add a PIN to lock the app when it's not in use. You'll need to enter it each time you open the app or return to it.</p>
+      <div class="field">
+        <label for="newPin1">Choose a 4–6 digit PIN</label>
+        <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" id="newPin1" placeholder="••••">
+      </div>
+      <div class="field">
+        <label for="newPin2">Confirm PIN</label>
+        <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" id="newPin2" placeholder="••••">
+      </div>
+      <div class="form-error" id="setPinError">PINs must match and be 4–6 digits.</div>
+      <button class="btn" id="setPinBtn">Set PIN &amp; Enable Lock</button>
+    </div>
+
+    <div class="security-card" id="pinActiveCard" style="display:none;">
+      <div class="sec-status"><span class="sec-dot"></span> App lock is <strong>enabled</strong></div>
+
+      <div class="sec-row" id="biometricRow" style="display:none;">
+        <div>
+          <div class="sec-row-title">Fingerprint / Face unlock</div>
+          <div class="sec-row-sub">Use your device's biometric unlock instead of typing your PIN.</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="biometricToggle">
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        </label>
+      </div>
+      <div class="form-error" id="biometricError"></div>
+
+      <details class="sec-details">
+        <summary>Change PIN</summary>
+        <div class="field" style="margin-top:12px;">
+          <label for="currentPinForChange">Current PIN</label>
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" id="currentPinForChange">
+        </div>
+        <div class="field">
+          <label for="changePin1">New PIN</label>
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" id="changePin1">
+        </div>
+        <div class="field">
+          <label for="changePin2">Confirm new PIN</label>
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" id="changePin2">
+        </div>
+        <div class="form-error" id="changePinError">Check your current PIN and make sure the new PIN matches.</div>
+        <button class="btn secondary" id="changePinBtn">Update PIN</button>
+      </details>
+
+      <details class="sec-details">
+        <summary>Turn off app lock</summary>
+        <div class="field" style="margin-top:12px;">
+          <label for="currentPinForRemove">Enter your PIN to confirm</label>
+          <input type="password" inputmode="numeric" pattern="[0-9]*" maxlength="6" id="currentPinForRemove">
+        </div>
+        <div class="form-error" id="removePinError">Incorrect PIN.</div>
+        <button class="btn danger" id="removePinBtn">Turn Off Lock</button>
+      </details>
+
+      <button class="btn secondary" id="lockNowFromSecurityBtn" style="margin-top:6px;">Lock App Now</button>
+    </div>
+  </section>
+
+  <footer class="note">Your data is stored privately on this device only.</footer>
+</div>
+
+<!-- LOCK SCREEN -->
+<div class="lock-overlay" id="lockOverlay">
+  <div class="lock-box">
+    <div class="lock-glyph">🔒</div>
+    <h2>Family FD Tracker</h2>
+    <p class="lock-sub" id="lockSub">Enter your PIN to unlock</p>
+    <div class="pin-dots" id="pinDots">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="lock-error" id="lockError"></div>
+    <div class="pin-pad" id="pinPad">
+      <button data-key="1">1</button>
+      <button data-key="2">2</button>
+      <button data-key="3">3</button>
+      <button data-key="4">4</button>
+      <button data-key="5">5</button>
+      <button data-key="6">6</button>
+      <button data-key="7">7</button>
+      <button data-key="8">8</button>
+      <button data-key="9">9</button>
+      <span></span>
+      <button data-key="0">0</button>
+      <button data-key="back" class="pin-back" aria-label="Backspace">⌫</button>
+    </div>
+    <button class="btn secondary" id="biometricUnlockBtn" style="display:none;">👆 Use Fingerprint / Face Unlock</button>
+  </div>
+</div>
+
+<!-- FD Modal -->
+<div class="modal-overlay" id="fdModalOverlay">
+  <div class="modal">
+    <h3 id="fdModalTitle">Add Fixed Deposit</h3>
+    <div class="field">
+      <label for="fdBank">Bank</label>
+      <select id="fdBank"></select>
+    </div>
+    <div class="field">
+      <label for="fdPerson">Family Member</label>
+      <select id="fdPerson"></select>
+    </div>
+    <div class="field">
+      <label for="fdNumber">FD ID / Account Number</label>
+      <input type="text" id="fdNumber" placeholder="e.g. FD-2024-00931">
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="fdPrincipal">Principal Amount (₹)</label>
+        <input type="number" id="fdPrincipal" min="0" step="0.01" placeholder="e.g. 100000">
+      </div>
+      <div class="field">
+        <label for="fdMaturityAmount">Maturity Amount (₹)</label>
+        <input type="number" id="fdMaturityAmount" min="0" step="0.01" placeholder="e.g. 108000">
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="fdStartDate">Start Date</label>
+        <input type="date" id="fdStartDate">
+      </div>
+      <div class="field">
+        <label for="fdMaturityDate">Maturity Date</label>
+        <input type="date" id="fdMaturityDate">
+      </div>
+    </div>
+    <div class="field">
+      <label for="fdInterest">Interest Rate (% p.a.)</label>
+      <input type="number" id="fdInterest" min="0" step="0.01" placeholder="e.g. 7.25">
+    </div>
+    <div class="form-error" id="fdFormError">Please fill in bank, member, dates and amounts.</div>
+    <div class="modal-actions">
+      <button class="btn secondary" id="fdCancelBtn">Cancel</button>
+      <button class="btn" id="fdSaveBtn">Save Deposit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const STORAGE_KEY = 'fd-tracker-data';
+  let data = { banks: [], people: [], fds: [] };
+  let editingFdId = null;
+  let loaded = false;
+
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+  function uid(){ return 'id-' + Date.now() + '-' + Math.random().toString(36).slice(2,8); }
+  function fmtMoney(n){
+    if(n === null || n === undefined || isNaN(n)) return '—';
+    return '₹' + Number(n).toLocaleString('en-IN', {maximumFractionDigits:0});
+  }
+  function daysBetween(dateStr){
+    const today = new Date(); today.setHours(0,0,0,0);
+    const target = new Date(dateStr); target.setHours(0,0,0,0);
+    return Math.round((target - today) / 86400000);
+  }
+  function fmtDate(dateStr){
+    if(!dateStr) return '—';
+    const d = new Date(dateStr);
+    return d.toLocaleDateString('en-IN', {day:'2-digit', month:'short', year:'numeric'});
+  }
+
+  async function loadData(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw){
+        const parsed = JSON.parse(raw);
+        data = { banks: parsed.banks || [], people: parsed.people || [], fds: parsed.fds || [] };
+      }
+    }catch(e){
+      // no existing data yet, or storage unavailable — start fresh
+      data = { banks: [], people: [], fds: [] };
+    }
+    loaded = true;
+  }
+
+  async function saveData(){
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }catch(e){
+      console.error('Failed to save data', e);
+      alert('Could not save your data on this device. Your browser storage may be full or disabled.');
+    }
+  }
+
+  function todayStampText(){
+    const d = new Date();
+    return d.toLocaleDateString('en-IN', {weekday:'long', day:'2-digit', month:'long', year:'numeric'});
+  }
+
+  // ===== Tabs =====
+  function switchView(view){
+    $$('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+    $$('.view').forEach(v => v.classList.toggle('active', v.id === 'view-' + view));
+  }
+  $$('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchView(btn.dataset.view);
+      if(btn.dataset.view === 'dashboard') renderDashboard();
+      if(btn.dataset.view === 'fds') renderFdView();
+      if(btn.dataset.view === 'banks') renderBankList();
+      if(btn.dataset.view === 'people') renderPersonList();
+      if(btn.dataset.view === 'security') renderSecurityView();
+    });
+  });
+
+  // ===== Status helpers =====
+  function fdStatus(fd){
+    const d = daysBetween(fd.maturityDate);
+    if(d < 0) return 'matured';
+    if(d <= 15) return 'maturing';
+    return 'active';
+  }
+
+  // ===== Dashboard =====
+  function renderDashboard(){
+    const fds = data.fds;
+    const totalPrincipal = fds.reduce((s,f) => s + (Number(f.principal)||0), 0);
+    const totalMaturity = fds.reduce((s,f) => s + (Number(f.maturityAmount)||0), 0);
+    const maturingSoon = fds.filter(f => { const d = daysBetween(f.maturityDate); return d >= 0 && d <= 15; });
+
+    $('#statGrid').innerHTML = `
+      <div class="stat-card">
+        <div class="stat-label">Total Deposits</div>
+        <div class="stat-value">${fds.length}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Total Principal</div>
+        <div class="stat-value small">${fmtMoney(totalPrincipal)}</div>
+      </div>
+      <div class="stat-card gold">
+        <div class="stat-label">Total Maturity Value</div>
+        <div class="stat-value small">${fmtMoney(totalMaturity)}</div>
+      </div>
+      <div class="stat-card ${maturingSoon.length ? 'gold' : ''}">
+        <div class="stat-label">Maturing in 15 Days</div>
+        <div class="stat-value">${maturingSoon.length}</div>
+      </div>
+    `;
+
+    // Alert banner
+    if(maturingSoon.length){
+      const rows = maturingSoon
+        .sort((a,b) => daysBetween(a.maturityDate) - daysBetween(b.maturityDate))
+        .map(f => {
+          const d = daysBetween(f.maturityDate);
+          const dayLabel = d === 0 ? 'Today' : d === 1 ? 'Tomorrow' : `In ${d} days`;
+          return `<div class="alert-row">
+            <span><span class="who">${escapeHtml(f.personName)}</span> — ${escapeHtml(f.bankName)} · ${escapeHtml(f.fdNumber || 'No ID')}</span>
+            <span class="days">${dayLabel} · ${fmtDate(f.maturityDate)}</span>
+          </div>`;
+        }).join('');
+      $('#alertBanner').innerHTML = `
+        <div class="alert-banner">
+          <div class="alert-head">⏰ Maturing Soon</div>
+          <div class="alert-list">${rows}</div>
+        </div>`;
+    } else {
+      $('#alertBanner').innerHTML = '';
+    }
+
+    // By person
+    if(data.people.length === 0 || fds.length === 0){
+      $('#byPerson').innerHTML = `<div class="breakdown-row"><span>No data yet</span></div>`;
+    } else {
+      const rows = data.people.map(p => {
+        const pfds = fds.filter(f => f.personId === p.id);
+        const total = pfds.reduce((s,f) => s + (Number(f.principal)||0), 0);
+        return `<div class="breakdown-row"><span>${escapeHtml(p.name)} <span style="color:var(--ink-faint);font-size:12px;">(${pfds.length})</span></span><span class="amt">${fmtMoney(total)}</span></div>`;
+      }).join('');
+      $('#byPerson').innerHTML = rows;
+    }
+
+    // By bank
+    if(data.banks.length === 0 || fds.length === 0){
+      $('#byBank').innerHTML = `<div class="breakdown-row"><span>No data yet</span></div>`;
+    } else {
+      const rows = data.banks.map(b => {
+        const bfds = fds.filter(f => f.bankId === b.id);
+        const total = bfds.reduce((s,f) => s + (Number(f.principal)||0), 0);
+        return `<div class="breakdown-row"><span>${escapeHtml(b.name)} <span style="color:var(--ink-faint);font-size:12px;">(${bfds.length})</span></span><span class="amt">${fmtMoney(total)}</span></div>`;
+      }).join('');
+      $('#byBank').innerHTML = rows;
+    }
+  }
+
+  function escapeHtml(s){
+    if(s === null || s === undefined) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  // ===== FD View =====
+  function populateFilterDropdowns(){
+    const fp = $('#filterPerson'), fb = $('#filterBank');
+    const curP = fp.value, curB = fb.value;
+    fp.innerHTML = '<option value="">All Persons</option>' + data.people.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join('');
+    fb.innerHTML = '<option value="">All Banks</option>' + data.banks.map(b => `<option value="${b.id}">${escapeHtml(b.name)}</option>`).join('');
+    fp.value = curP; fb.value = curB;
+  }
+
+  function renderFdView(){
+    populateFilterDropdowns();
+    let list = [...data.fds];
+
+    const pf = $('#filterPerson').value;
+    const bf = $('#filterBank').value;
+    if(pf) list = list.filter(f => f.personId === pf);
+    if(bf) list = list.filter(f => f.bankId === bf);
+
+    const sortMode = $('#sortFd').value;
+    list.sort((a,b) => {
+      if(sortMode === 'maturity-asc') return new Date(a.maturityDate) - new Date(b.maturityDate);
+      if(sortMode === 'maturity-desc') return new Date(b.maturityDate) - new Date(a.maturityDate);
+      if(sortMode === 'principal-desc') return (Number(b.principal)||0) - (Number(a.principal)||0);
+      if(sortMode === 'principal-asc') return (Number(a.principal)||0) - (Number(b.principal)||0);
+      return 0;
+    });
+
+    if(data.fds.length === 0){
+      $('#fdList').innerHTML = `<div class="empty-state">
+        <div class="glyph">📖</div>
+        <p><strong>No fixed deposits recorded yet.</strong></p>
+        <p>Add your banks and family members first, then log your first deposit.</p>
+      </div>`;
+      return;
+    }
+    if(list.length === 0){
+      $('#fdList').innerHTML = `<div class="empty-state"><p>No deposits match this filter.</p></div>`;
+      return;
+    }
+
+    $('#fdList').innerHTML = list.map(f => {
+      const status = fdStatus(f);
+      const d = daysBetween(f.maturityDate);
+      let stampText = 'Active';
+      if(status === 'matured') stampText = 'Matured';
+      else if(status === 'maturing') stampText = d === 0 ? 'Due Today' : `Due in ${d}d`;
+      return `
+      <div class="fd-card ${status}" data-id="${f.id}">
+        <div class="fd-main">
+          <div class="fd-top-row">
+            <span class="fd-bank">${escapeHtml(f.bankName)}</span>
+            <span class="fd-person-tag">${escapeHtml(f.personName)}</span>
+            <span class="fd-id">${escapeHtml(f.fdNumber || 'No ID')}</span>
+          </div>
+          <div class="fd-detail-row">
+            <span><span class="d-label">Principal</span><span class="d-val">${fmtMoney(f.principal)}</span></span>
+            <span><span class="d-label">Maturity Value</span><span class="d-val">${fmtMoney(f.maturityAmount)}</span></span>
+            <span><span class="d-label">Rate</span><span class="d-val">${f.interestRate}%</span></span>
+          </div>
+          <div class="fd-detail-row">
+            <span><span class="d-label">Start</span><span class="d-val">${fmtDate(f.startDate)}</span></span>
+            <span><span class="d-label">Maturity</span><span class="d-val">${fmtDate(f.maturityDate)}</span></span>
+          </div>
+        </div>
+        <div class="fd-actions">
+          <span class="stamp ${status}">${stampText}</span>
+          <button class="icon-btn edit" title="Edit" data-id="${f.id}">✎</button>
+          <button class="icon-btn del" title="Delete" data-id="${f.id}">🗑</button>
+        </div>
+      </div>`;
+    }).join('');
+
+    $$('.icon-btn.edit').forEach(b => b.addEventListener('click', () => openFdModal(b.dataset.id)));
+    $$('.icon-btn.del').forEach(b => b.addEventListener('click', () => deleteFd(b.dataset.id)));
+  }
+
+  $('#filterPerson').addEventListener('change', renderFdView);
+  $('#filterBank').addEventListener('change', renderFdView);
+  $('#sortFd').addEventListener('change', renderFdView);
+
+  function csvEscape(val){
+    const s = val === null || val === undefined ? '' : String(val);
+    if(/[",\n]/.test(s)) return '"' + s.replace(/"/g, '""') + '"';
+    return s;
+  }
+
+  function statusLabel(fd){
+    const status = fdStatus(fd);
+    if(status === 'matured') return 'Matured';
+    if(status === 'maturing') return 'Maturing Soon';
+    return 'Active';
+  }
+
+  function exportCsv(){
+    if(data.fds.length === 0){
+      alert('There are no fixed deposits to export yet.');
+      return;
+    }
+    const headers = ['Family Member','Bank','FD ID','Principal Amount','Maturity Amount','Interest Rate (%)','Start Date','Maturity Date','Status'];
+    const rows = data.fds.map(f => [
+      f.personName, f.bankName, f.fdNumber || '', f.principal, f.maturityAmount,
+      f.interestRate, f.startDate, f.maturityDate, statusLabel(f)
+    ]);
+    const csvContent = [headers, ...rows]
+      .map(row => row.map(csvEscape).join(','))
+      .join('\r\n');
+
+    const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    const dateStamp = new Date().toISOString().slice(0,10);
+    a.href = url;
+    a.download = `family-fd-tracker-${dateStamp}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+
+  $('#exportCsvBtn').addEventListener('click', exportCsv);
+
+  // ===== CSV Import =====
+  const EXPECTED_HEADERS = ['Family Member','Bank','FD ID','Principal Amount','Maturity Amount','Interest Rate (%)','Start Date','Maturity Date','Status'];
+
+  function parseCsvText(text){
+    // Strip BOM if present
+    text = text.replace(/^\ufeff/, '');
+    const rows = [];
+    let row = [];
+    let field = '';
+    let inQuotes = false;
+    for(let i = 0; i < text.length; i++){
+      const c = text[i];
+      if(inQuotes){
+        if(c === '"'){
+          if(text[i+1] === '"'){ field += '"'; i++; }
+          else { inQuotes = false; }
+        } else {
+          field += c;
+        }
+      } else {
+        if(c === '"'){ inQuotes = true; }
+        else if(c === ','){ row.push(field); field = ''; }
+        else if(c === '\r'){ /* skip, \n handles line end */ }
+        else if(c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; }
+        else { field += c; }
+      }
+    }
+    // last field/row (file may not end with newline)
+    if(field.length > 0 || row.length > 0){ row.push(field); rows.push(row); }
+    return rows.filter(r => !(r.length === 1 && r[0].trim() === ''));
+  }
+
+  function findOrCreateBank(name){
+    let bank = data.banks.find(b => b.name.toLowerCase() === name.toLowerCase());
+    if(!bank){
+      bank = { id: uid(), name };
+      data.banks.push(bank);
+    }
+    return bank;
+  }
+
+  function findOrCreatePerson(name){
+    let person = data.people.find(p => p.name.toLowerCase() === name.toLowerCase());
+    if(!person){
+      person = { id: uid(), name };
+      data.people.push(person);
+    }
+    return person;
+  }
+
+  function isValidDate(s){
+    if(!s) return false;
+    const d = new Date(s);
+    return !isNaN(d.getTime());
+  }
+
+  function normalizeDate(s){
+    // Accepts YYYY-MM-DD directly; otherwise try to parse and reformat
+    if(/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+    const d = new Date(s);
+    if(isNaN(d.getTime())) return null;
+    return d.toISOString().slice(0,10);
+  }
+
+  async function importCsv(file){
+    const text = await file.text();
+    const rows = parseCsvText(text);
+    if(rows.length === 0){
+      showImportSummary('The file appears to be empty.', true);
+      return;
+    }
+
+    const header = rows[0].map(h => h.trim());
+    const headerMatches = EXPECTED_HEADERS.every((h, i) => (header[i] || '').toLowerCase() === h.toLowerCase());
+    if(!headerMatches){
+      showImportSummary('This file\'s columns don\'t match the expected export format. Please use a CSV exported from this app.', true);
+      return;
+    }
+
+    let added = 0, updated = 0, skipped = 0;
+    const skippedReasons = [];
+
+    for(let i = 1; i < rows.length; i++){
+      const r = rows[i];
+      if(r.every(c => c.trim() === '')) continue;
+
+      const [personName, bankName, fdNumber, principal, maturityAmount, interestRate, startDate, maturityDate] = r.map(c => (c || '').trim());
+
+      if(!personName || !bankName || !startDate || !maturityDate || principal === '' || maturityAmount === '' || interestRate === ''){
+        skipped++; skippedReasons.push(`Row ${i+1}: missing required fields`); continue;
+      }
+      const normStart = normalizeDate(startDate);
+      const normMaturity = normalizeDate(maturityDate);
+      if(!normStart || !normMaturity){
+        skipped++; skippedReasons.push(`Row ${i+1}: invalid date`); continue;
+      }
+      const principalNum = Number(principal);
+      const maturityNum = Number(maturityAmount);
+      const rateNum = Number(interestRate);
+      if(isNaN(principalNum) || isNaN(maturityNum) || isNaN(rateNum)){
+        skipped++; skippedReasons.push(`Row ${i+1}: invalid number`); continue;
+      }
+
+      const bank = findOrCreateBank(bankName);
+      const person = findOrCreatePerson(personName);
+
+      // Match existing record by bank + person + FD ID to support re-import as an update
+      let existing = null;
+      if(fdNumber){
+        existing = data.fds.find(f => f.bankId === bank.id && f.personId === person.id && (f.fdNumber || '') === fdNumber);
+      }
+
+      const record = {
+        id: existing ? existing.id : uid(),
+        bankId: bank.id, bankName: bank.name,
+        personId: person.id, personName: person.name,
+        fdNumber,
+        principal: principalNum,
+        maturityAmount: maturityNum,
+        startDate: normStart, maturityDate: normMaturity,
+        interestRate: rateNum
+      };
+
+      if(existing){
+        const idx = data.fds.findIndex(f => f.id === existing.id);
+        data.fds[idx] = record;
+        updated++;
+      } else {
+        data.fds.push(record);
+        added++;
+      }
+    }
+
+    await saveData();
+    renderFdView();
+    renderDashboard();
+    renderBankList();
+    renderPersonList();
+
+    let msg = `Imported ${added} new deposit${added===1?'':'s'}, updated ${updated}.`;
+    if(skipped > 0) msg += ` Skipped ${skipped} row${skipped===1?'':'s'} (${skippedReasons.slice(0,3).join('; ')}${skippedReasons.length>3 ? '…' : ''}).`;
+    showImportSummary(msg, skipped > 0 && added === 0 && updated === 0);
+  }
+
+  function showImportSummary(message, isError){
+    $('#importSummary').innerHTML = `
+      <div class="alert-banner ${isError ? '' : 'neutral'}">
+        <div class="alert-head">${isError ? '⚠ Import Issue' : '✓ Import Complete'}</div>
+        <div style="font-size:14px;">${escapeHtml(message)}</div>
+      </div>`;
+  }
+
+  $('#importCsvBtn').addEventListener('click', () => $('#importCsvInput').click());
+  $('#importCsvInput').addEventListener('change', async (e) => {
+    const file = e.target.files[0];
+    if(!file) return;
+    await importCsv(file);
+    e.target.value = ''; // allow re-selecting the same file later
+  });
+
+  async function deleteFd(id){
+    data.fds = data.fds.filter(f => f.id !== id);
+    await saveData();
+    renderFdView();
+    renderDashboard();
+  }
+
+  // ===== FD Modal =====
+  function populateModalDropdowns(){
+    const bSel = $('#fdBank'), pSel = $('#fdPerson');
+    bSel.innerHTML = data.banks.length
+      ? data.banks.map(b => `<option value="${b.id}">${escapeHtml(b.name)}</option>`).join('')
+      : `<option value="">Add a bank first</option>`;
+    pSel.innerHTML = data.people.length
+      ? data.people.map(p => `<option value="${p.id}">${escapeHtml(p.name)}</option>`).join('')
+      : `<option value="">Add a family member first</option>`;
+  }
+
+  function openFdModal(fdId){
+    editingFdId = fdId || null;
+    populateModalDropdowns();
+    $('#fdFormError').style.display = 'none';
+
+    if(fdId){
+      const fd = data.fds.find(f => f.id === fdId);
+      $('#fdModalTitle').textContent = 'Edit Fixed Deposit';
+      $('#fdBank').value = fd.bankId;
+      $('#fdPerson').value = fd.personId;
+      $('#fdNumber').value = fd.fdNumber || '';
+      $('#fdPrincipal').value = fd.principal;
+      $('#fdMaturityAmount').value = fd.maturityAmount;
+      $('#fdStartDate').value = fd.startDate;
+      $('#fdMaturityDate').value = fd.maturityDate;
+      $('#fdInterest').value = fd.interestRate;
+    } else {
+      $('#fdModalTitle').textContent = 'Add Fixed Deposit';
+      $('#fdNumber').value = '';
+      $('#fdPrincipal').value = '';
+      $('#fdMaturityAmount').value = '';
+      $('#fdStartDate').value = '';
+      $('#fdMaturityDate').value = '';
+      $('#fdInterest').value = '';
+    }
+    $('#fdModalOverlay').classList.add('open');
+  }
+
+  function closeFdModal(){
+    $('#fdModalOverlay').classList.remove('open');
+    editingFdId = null;
+  }
+
+  $('#addFdBtn').addEventListener('click', () => {
+    if(data.banks.length === 0 || data.people.length === 0){
+      alert('Please add at least one bank and one family member before adding a deposit.');
+      return;
+    }
+    openFdModal(null);
+  });
+  $('#fdCancelBtn').addEventListener('click', closeFdModal);
+  $('#fdModalOverlay').addEventListener('click', e => { if(e.target.id === 'fdModalOverlay') closeFdModal(); });
+
+  $('#fdSaveBtn').addEventListener('click', async () => {
+    const bankId = $('#fdBank').value;
+    const personId = $('#fdPerson').value;
+    const fdNumber = $('#fdNumber').value.trim();
+    const principal = $('#fdPrincipal').value;
+    const maturityAmount = $('#fdMaturityAmount').value;
+    const startDate = $('#fdStartDate').value;
+    const maturityDate = $('#fdMaturityDate').value;
+    const interestRate = $('#fdInterest').value;
+
+    if(!bankId || !personId || !principal || !maturityAmount || !startDate || !maturityDate || interestRate === ''){
+      $('#fdFormError').style.display = 'block';
+      return;
+    }
+    $('#fdFormError').style.display = 'none';
+
+    const bank = data.banks.find(b => b.id === bankId);
+    const person = data.people.find(p => p.id === personId);
+
+    const record = {
+      id: editingFdId || uid(),
+      bankId, bankName: bank.name,
+      personId, personName: person.name,
+      fdNumber,
+      principal: Number(principal),
+      maturityAmount: Number(maturityAmount),
+      startDate, maturityDate,
+      interestRate: Number(interestRate)
+    };
+
+    if(editingFdId){
+      const idx = data.fds.findIndex(f => f.id === editingFdId);
+      data.fds[idx] = record;
+    } else {
+      data.fds.push(record);
+    }
+    await saveData();
+    closeFdModal();
+    renderFdView();
+    renderDashboard();
+  });
+
+  // ===== Banks =====
+  function renderBankList(){
+    if(data.banks.length === 0){
+      $('#bankList').innerHTML = `<div class="empty-state"><p>No banks added yet.</p></div>`;
+      return;
+    }
+    $('#bankList').innerHTML = data.banks.map(b => {
+      const count = data.fds.filter(f => f.bankId === b.id).length;
+      return `<div class="entity-row">
+        <span><span class="name">${escapeHtml(b.name)}</span><span class="count">${count} deposit${count===1?'':'s'}</span></span>
+        <button class="icon-btn del" data-id="${b.id}" title="Remove">🗑</button>
+      </div>`;
+    }).join('');
+    $$('#bankList .icon-btn.del').forEach(btn => btn.addEventListener('click', () => deleteBank(btn.dataset.id)));
+  }
+
+  async function deleteBank(id){
+    const inUse = data.fds.some(f => f.bankId === id);
+    if(inUse){
+      alert('This bank has fixed deposits linked to it. Remove or reassign those deposits first.');
+      return;
+    }
+    data.banks = data.banks.filter(b => b.id !== id);
+    await saveData();
+    renderBankList();
+  }
+
+  $('#addBankBtn').addEventListener('click', async () => {
+    const input = $('#newBankName');
+    const name = input.value.trim();
+    if(!name) return;
+    if(data.banks.some(b => b.name.toLowerCase() === name.toLowerCase())){
+      input.value = '';
+      return;
+    }
+    data.banks.push({ id: uid(), name });
+    await saveData();
+    input.value = '';
+    renderBankList();
+  });
+  $('#newBankName').addEventListener('keydown', e => { if(e.key === 'Enter') $('#addBankBtn').click(); });
+
+  // ===== People =====
+  function renderPersonList(){
+    if(data.people.length === 0){
+      $('#personList').innerHTML = `<div class="empty-state"><p>No family members added yet.</p></div>`;
+      return;
+    }
+    $('#personList').innerHTML = data.people.map(p => {
+      const count = data.fds.filter(f => f.personId === p.id).length;
+      return `<div class="entity-row">
+        <span><span class="name">${escapeHtml(p.name)}</span><span class="count">${count} deposit${count===1?'':'s'}</span></span>
+        <button class="icon-btn del" data-id="${p.id}" title="Remove">🗑</button>
+      </div>`;
+    }).join('');
+    $$('#personList .icon-btn.del').forEach(btn => btn.addEventListener('click', () => deletePerson(btn.dataset.id)));
+  }
+
+  async function deletePerson(id){
+    const inUse = data.fds.some(f => f.personId === id);
+    if(inUse){
+      alert('This family member has fixed deposits linked to them. Remove or reassign those deposits first.');
+      return;
+    }
+    data.people = data.people.filter(p => p.id !== id);
+    await saveData();
+    renderPersonList();
+  }
+
+  $('#addPersonBtn').addEventListener('click', async () => {
+    const input = $('#newPersonName');
+    const name = input.value.trim();
+    if(!name) return;
+    if(data.people.some(p => p.name.toLowerCase() === name.toLowerCase())){
+      input.value = '';
+      return;
+    }
+    data.people.push({ id: uid(), name });
+    await saveData();
+    input.value = '';
+    renderPersonList();
+  });
+  $('#newPersonName').addEventListener('keydown', e => { if(e.key === 'Enter') $('#addPersonBtn').click(); });
+
+  // ===== Security / App Lock =====
+  const SECURITY_KEY = 'fd-tracker-security';
+  let security = { pinHash: null, lockEnabled: false, biometricEnabled: false, credentialId: null };
+  let pinBuffer = '';
+  let pinMode = 'unlock'; // 'unlock' | 'setup1' | 'setup2' | 'change-current' etc handled via separate inline forms; pad only used for unlock screen
+  let biometricAvailable = false;
+
+  function loadSecurity(){
+    try{
+      const raw = localStorage.getItem(SECURITY_KEY);
+      if(raw){
+        const parsed = JSON.parse(raw);
+        security = {
+          pinHash: parsed.pinHash || null,
+          lockEnabled: !!parsed.lockEnabled,
+          biometricEnabled: !!parsed.biometricEnabled,
+          credentialId: parsed.credentialId || null
+        };
+      }
+    }catch(e){ /* start fresh */ }
+  }
+  function saveSecurity(){
+    try{ localStorage.setItem(SECURITY_KEY, JSON.stringify(security)); }
+    catch(e){ console.error('Failed to save security settings', e); }
+  }
+
+  async function sha256Hex(str){
+    const enc = new TextEncoder().encode(str);
+    const buf = await crypto.subtle.digest('SHA-256', enc);
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  function bufToBase64Url(buf){
+    const bytes = new Uint8Array(buf);
+    let str = '';
+    for(let i=0;i<bytes.length;i++) str += String.fromCharCode(bytes[i]);
+    return btoa(str).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  }
+  function base64UrlToBuf(b64url){
+    let b64 = b64url.replace(/-/g,'+').replace(/_/g,'/');
+    while(b64.length % 4) b64 += '=';
+    const str = atob(b64);
+    const bytes = new Uint8Array(str.length);
+    for(let i=0;i<str.length;i++) bytes[i] = str.charCodeAt(i);
+    return bytes.buffer;
+  }
+
+  async function checkBiometricAvailability(){
+    try{
+      if(window.PublicKeyCredential && PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable){
+        biometricAvailable = await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable();
+      }
+    }catch(e){ biometricAvailable = false; }
+  }
+
+  async function registerBiometric(){
+    try{
+      const challenge = crypto.getRandomValues(new Uint8Array(32));
+      const userId = crypto.getRandomValues(new Uint8Array(16));
+      const cred = await navigator.credentials.create({
+        publicKey: {
+          challenge,
+          rp: { name: 'Family FD Tracker' },
+          user: { id: userId, name: 'family-fd-tracker-user', displayName: 'Family FD Tracker' },
+          pubKeyCredParams: [{ type: 'public-key', alg: -7 }, { type: 'public-key', alg: -257 }],
+          authenticatorSelection: { authenticatorAttachment: 'platform', userVerification: 'required' },
+          timeout: 60000,
+          attestation: 'none'
+        }
+      });
+      if(cred){
+        security.credentialId = bufToBase64Url(cred.rawId);
+        security.biometricEnabled = true;
+        saveSecurity();
+        return true;
+      }
+      return false;
+    }catch(e){
+      console.error('Biometric registration failed', e);
+      return false;
+    }
+  }
+
+  async function verifyBiometric(){
+    try{
+      const challenge = crypto.getRandomValues(new Uint8Array(32));
+      const assertion = await navigator.credentials.get({
+        publicKey: {
+          challenge,
+          allowCredentials: [{ id: base64UrlToBuf(security.credentialId), type: 'public-key' }],
+          userVerification: 'required',
+          timeout: 60000
+        }
+      });
+      return !!assertion;
+    }catch(e){
+      return false;
+    }
+  }
+
+  // --- Lock overlay (PIN pad) ---
+  function renderPinDots(){
+    const dots = $$('#pinDots span');
+    dots.forEach((d, i) => d.classList.toggle('filled', i < pinBuffer.length));
+  }
+
+  function showLockOverlay(){
+    pinBuffer = '';
+    renderPinDots();
+    $('#lockError').textContent = '';
+    $('#biometricUnlockBtn').style.display = security.biometricEnabled && security.credentialId ? 'inline-block' : 'none';
+    $('#lockOverlay').classList.add('open');
+    $('#lockNowBtn').style.display = security.lockEnabled ? 'inline-flex' : 'none';
+  }
+
+  function hideLockOverlay(){
+    $('#lockOverlay').classList.remove('open');
+    pinBuffer = '';
+  }
+
+  async function tryUnlockWithPin(){
+    const hash = await sha256Hex(pinBuffer);
+    if(hash === security.pinHash){
+      hideLockOverlay();
+    } else {
+      $('#lockError').textContent = 'Incorrect PIN. Try again.';
+      const dotsEl = $('#pinDots');
+      dotsEl.classList.remove('shake'); void dotsEl.offsetWidth; dotsEl.classList.add('shake');
+      pinBuffer = '';
+      renderPinDots();
+    }
+  }
+
+  $('#pinPad').addEventListener('click', async (e) => {
+    const btn = e.target.closest('button');
+    if(!btn) return;
+    const key = btn.dataset.key;
+    if(key === 'back'){
+      pinBuffer = pinBuffer.slice(0, -1);
+      renderPinDots();
+      return;
+    }
+    if(pinBuffer.length >= 6) return;
+    pinBuffer += key;
+    renderPinDots();
+    if(pinBuffer.length >= 4){
+      // auto-submit once a plausible PIN length is reached; wait briefly so the last dot is visible
+      if(pinBuffer.length === 4 || pinBuffer.length === 6){
+        setTimeout(() => { if(pinBuffer.length >= 4) tryUnlockWithPin(); }, 120);
+      }
+    }
+  });
+
+  $('#biometricUnlockBtn').addEventListener('click', async () => {
+    $('#lockError').textContent = '';
+    const ok = await verifyBiometric();
+    if(ok){ hideLockOverlay(); }
+    else { $('#lockError').textContent = 'Fingerprint/Face unlock failed. Use your PIN instead.'; }
+  });
+
+  $('#lockNowBtn').addEventListener('click', () => { if(security.lockEnabled) showLockOverlay(); });
+  $('#lockNowFromSecurityBtn').addEventListener('click', () => { showLockOverlay(); });
+
+  // --- Security tab rendering ---
+  function renderSecurityView(){
+    $('#lockNowBtn').style.display = security.lockEnabled ? 'inline-flex' : 'none';
+    if(security.lockEnabled && security.pinHash){
+      $('#noPinSetup').style.display = 'none';
+      $('#pinActiveCard').style.display = 'block';
+      $('#biometricRow').style.display = biometricAvailable ? 'flex' : 'none';
+      $('#biometricToggle').checked = security.biometricEnabled;
+    } else {
+      $('#noPinSetup').style.display = 'block';
+      $('#pinActiveCard').style.display = 'none';
+    }
+  }
+
+  $('#setPinBtn').addEventListener('click', async () => {
+    const p1 = $('#newPin1').value.trim();
+    const p2 = $('#newPin2').value.trim();
+    const valid = /^\d{4,6}$/.test(p1) && p1 === p2;
+    if(!valid){
+      $('#setPinError').style.display = 'block';
+      return;
+    }
+    $('#setPinError').style.display = 'none';
+    security.pinHash = await sha256Hex(p1);
+    security.lockEnabled = true;
+    saveSecurity();
+    $('#newPin1').value = ''; $('#newPin2').value = '';
+    renderSecurityView();
+  });
+
+  $('#changePinBtn').addEventListener('click', async () => {
+    const current = $('#currentPinForChange').value.trim();
+    const p1 = $('#changePin1').value.trim();
+    const p2 = $('#changePin2').value.trim();
+    const currentHash = await sha256Hex(current);
+    const valid = currentHash === security.pinHash && /^\d{4,6}$/.test(p1) && p1 === p2;
+    if(!valid){
+      $('#changePinError').style.display = 'block';
+      return;
+    }
+    $('#changePinError').style.display = 'none';
+    security.pinHash = await sha256Hex(p1);
+    saveSecurity();
+    $('#currentPinForChange').value = ''; $('#changePin1').value = ''; $('#changePin2').value = '';
+    alert('PIN updated.');
+  });
+
+  $('#removePinBtn').addEventListener('click', async () => {
+    const current = $('#currentPinForRemove').value.trim();
+    const currentHash = await sha256Hex(current);
+    if(currentHash !== security.pinHash){
+      $('#removePinError').style.display = 'block';
+      return;
+    }
+    $('#removePinError').style.display = 'none';
+    security = { pinHash: null, lockEnabled: false, biometricEnabled: false, credentialId: null };
+    saveSecurity();
+    $('#currentPinForRemove').value = '';
+    renderSecurityView();
+  });
+
+  $('#biometricToggle').addEventListener('change', async (e) => {
+    if(e.target.checked){
+      const ok = await registerBiometric();
+      if(!ok){
+        e.target.checked = false;
+        $('#biometricError').textContent = 'Could not set up fingerprint/face unlock on this device.';
+      } else {
+        $('#biometricError').textContent = '';
+      }
+    } else {
+      security.biometricEnabled = false;
+      security.credentialId = null;
+      saveSecurity();
+    }
+  });
+
+
+  async function init(){
+    $('#todayStamp').textContent = todayStampText();
+    await loadData();
+    renderDashboard();
+    renderFdView();
+    renderBankList();
+    renderPersonList();
+  }
+  init();
+})();
+</script>
+</body>
+</html>
